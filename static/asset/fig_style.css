@@ -1,8 +1,14 @@
-.column {
+.column_4 {
     float: left;
-    width: 33%;
-    padding: 15px;
+    width: 25%;
+    padding: 0px;
   }
+
+.column_5 {
+  float: left;
+  width: 20%;
+  padding: 0px;
+}
   
   /* Clear floats after image containers */
   .row::after {
