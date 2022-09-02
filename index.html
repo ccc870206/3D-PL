@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="ginawu">
 
-<title>Inverse Halftone Colorization</title>
+<title>3D-PL</title>
 
 <!-- CSS includes -->
 <link href="static/asset/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 
 <div id="header" class="container-fluid">
     <div class="row">
-        <h1>3D-PL: Domain Adaptive Depth Estimation with 3D-aware Pseudo-Labeling</h1>
+        <h1>3D-PL: Domain Adaptive Depth Estimation <br>with 3D-aware Pseudo-Labeling</h1>
 
         <div class="authors">
             <a href="mailto:ytyen.cs09g@nctu.edu.tw" target="_blank">Yu-Ting Yen</a>,
@@ -44,7 +44,6 @@
 
             <p style="text-align:center;">
                 National Chiao Tung University, Taiwan 
-                <br>
                 Phiar Technologies
             </p>
         </div>
@@ -75,13 +74,14 @@
     </center>
 </div>
 
-<!-- <div class="container" id="teaser">
+<div class="container" id="teaser">
     <div class="row">
         <p style="text-align:center;">
-            <img src="static/fig/teaser.png" width=80%>
+            <img src="static/fig/teaser.png" width=95%>
         </p>
     </div>
-</div> -->
+</div>
+
 
 <div class="container" id="abstract">
     <h2>Abstract</h2>
@@ -92,170 +92,193 @@
     </p>
 </div>
 
-<!-- <div class="container" id="video">
-    <h2>Presentation Video</h2>
-	<center>
-	<div class="embed-responsive embed-responsive-16by9">
-        <iframe width="900" height="506" src="https://www.youtube.com/embed/1LeQmx5QEts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-	</center>
-</div> -->
 
-<!-- <div class="container" id="demo">
-    <h2>Comparisons with Baseline Methods</h2>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/input.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                Input Images
-            </figcaption>
-        </figure>
+<div class="container" id="qua_single">
+    <h2>Synthetic-to-Real Benchmark: KITTI (single-image setting)</h2>
+    <div class="row">
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Input Images
+                </figcaption>
+                <img src="static/fig/qualitative_no_stereo/input.png" width=98% style="float:right;">
+                
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Ground Truth
+                </figcaption>
+                <img src="static/fig/qualitative_no_stereo/gt.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Chuanxia_Zheng_T2Net_Synthetic-to-Realistic_Translation_ECCV_2018_paper.pdf">T<sup>2</sup>net</a>
+                </figcaption>
+                <img src="static/fig/qualitative_no_stereo/t2net.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    3D-PL
+                </figcaption>
+                <img src="static/fig/qualitative_no_stereo/ours.png" width=98% style="float:right;">
+            </figure>
+        </div>
     </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/CA.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Yu_Generative_Image_Inpainting_CVPR_2018_paper.pdf">CA</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/PEN-Net.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Zeng_Learning_Pyramid-Context_Encoder_Network_for_High-Quality_Image_Inpainting_CVPR_2019_paper.pdf">PEN-Net</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/StructureFlow.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Ren_StructureFlow_Image_Inpainting_via_Structure-Aware_Appearance_Flow_ICCV_2019_paper.pdf">StructureFlow</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/HiFill.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Yi_Contextual_Residual_Aggregation_for_Ultra_High-Resolution_Image_Inpainting_CVPR_2020_paper.pdf">HiFill</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/ProFill.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123640001.pdf">ProFill</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/SRN.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Wide-Context_Semantic_Image_Extrapolation_CVPR_2019_paper.pdf">SRN</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/Yang.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Yang_Very_Long_Natural_Scenery_Image_Prediction_by_Outpainting_ICCV_2019_paper.pdf">Yang et. al.</a>
-            </figcaption>
-        </figure>
-    </div>
-    <div class"row">
-        <figure>
-            <img src="static/fig/comparisons/ours.png" width=88% style="float:right;">
-            <figcaption style="padding: 28px 0 32px">
-                Ours
-            </figcaption>
-        </figure>
-    </div>
-</div> -->
 
-<!-- <div class="container" id="demo">
-    <h2>Full Panoramic Results</h2>
-    <div class"column">
-        <p style="text-align:center;">
-            Input Image 1<span style="margin-left: 43px;"></span>Input Image 2<span style="margin-left: 250px;"></span>Resultant Full Panoramic Image<span style="margin-left: 220px;"></span>
-        </p>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_1.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_2.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_3.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_4.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_5.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_6.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_7.png" width=90%></center>
-        </figure>
-        <figure>
-            <center><img src="static/fig/panorama/panorama_8.png" width=90%></center>
-        </figure>
-    </div>
-</div> -->
+    <div class="row">
+        <div class="column_4">
+            <figure>
+                <img src="static/fig/qualitative_no_stereo_more/input.png" width=98% style="float:right;">
+                
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <img src="static/fig/qualitative_no_stereo_more/gt.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <img src="static/fig/qualitative_no_stereo_more/t2net.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <img src="static/fig/qualitative_no_stereo_more/ours.png" width=98% style="float:right;">
+            </figure>
+        </div>
+    </div>    
 
-<!-- <div class="container" id="video">
-    <h2>Supplementary Materials</h2>
-	<div class="container" id="paper">
-        <center>
-            <div class="mx-auto">
-                <ul class="nav">
-                    <li class="nav-item text-center" style="display: inline-block;">
-                            <a href="https://drive.google.com/file/d/1cw6W1Sfq8JOJt2-NONOGYxorjfCXzgeW/view?usp=sharing" class="nav-link">
-                                <svg style="width:50px;height:50px;" viewBox="0 0 16 16">
-                                    <path fill="currentColor" d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                                      <path fill="currentColor" d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
-                                </svg><br>
-                                Link
-                            </a>
-                </ul>
-            </div>
-        </center>
-    </div>
-</div> -->
+</div>
 
-<!-- <div class="container" id="video">
-    <h2>Supplementary Video</h2>
-	<center>
-	<div class="embed-responsive embed-responsive-16by9">
-    	<iframe width="900" height="506" src="https://youtube.com/embed/oni2XBXB9b4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-	</center>
-</div> -->
 
-<!-- <div class="container" id="paper">
-    <h3>Citation</h3>
-    <div>
-        <pre class="citation">
-@InProceedings{yen2021inverse,
-    title={Inverse Halftone Colorization: Making Halftone Prints Color Photos},
-    author={Yen, Yu-Ting and Cheng, Chia-Chi and Chiu, Wei-Chen},
-    booktitle={2021 IEEE International Conference on Image Processing (ICIP)},
-    pages={1734--1738},
-    year={2021},
-    organization={IEEE}
-}
-		</pre>
+<div class="container" id="qua_stereo">
+    <h2>Synthetic-to-Real Benchmark: KITTI (stereo-pair setting)</h2>
+    <div class="row">
+        <div class="column_5">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Input Images
+                </figcaption>
+                <img src="static/fig/qualitative_stereo/input.png" width=98% style="float:right;">
+                
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Ground Truth
+                </figcaption>
+                <img src="static/fig/qualitative_stereo/gt.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    <a href="https://www.bmvc2020-conference.com/assets/papers/0122.pdf">DESC + Stereo</a>
+                </figcaption>
+                <img src="static/fig/qualitative_stereo/desc.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/PNVR_SharinGAN_Combining_Synthetic_and_Real_Data_for_Unsupervised_Geometry_Estimation_CVPR_2020_paper.pdf">SharinGAN (Stereo)</a>
+                </figcaption>
+                <img src="static/fig/qualitative_stereo/sharingan.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    3D-PL + Stereo
+                </figcaption>
+                <img src="static/fig/qualitative_stereo/ours.png" width=98% style="float:right;">
+            </figure>
+        </div>
     </div>
-</div> -->
+
+    <div class="row">
+        <div class="column_5">
+            <figure>
+                <img src="static/fig/qualitative_stereo_more/input.png" width=98% style="float:right;">
+                
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <img src="static/fig/qualitative_stereo_more/gt.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <img src="static/fig/qualitative_stereo_more/desc.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <img src="static/fig/qualitative_stereo_more/sharingan.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_5">
+            <figure>
+                <img src="static/fig/qualitative_stereo_more/ours.png" width=98% style="float:right;">
+            </figure>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container" id="qua_make3d">
+    <h2>Generalization to Real-world Datasets: Make3D</h2>
+    <div class="row">
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Input Images
+                </figcaption>
+                <img src="static/fig/qualitative_make3d/input.png" width=98% style="float:right;">
+                
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    Ground Truth
+                </figcaption>
+                <img src="static/fig/qualitative_make3d/gt.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Chuanxia_Zheng_T2Net_Synthetic-to-Realistic_Translation_ECCV_2018_paper.pdf">T<sup>2</sup>net</a>
+                </figcaption>
+                <img src="static/fig/qualitative_make3d/t2net.png" width=98% style="float:right;">
+            </figure>
+        </div>
+        <div class="column_4">
+            <figure>
+                <figcaption style="padding: 0px 0 15px">
+                    3D-PL
+                </figcaption>
+                <img src="static/fig/qualitative_make3d/ours.png" width=98% style="float:right;">
+            </figure>
+        </div>
+    </div>
+</div>
+
 
 <br>
+<br>
+
 
 <!-- Javascript includes -->
 <script src="static/asset/jquery-1.8.3.min.js"></script>
@@ -271,3 +294,4 @@ ga('send', 'pageview');
 </script>
 
 <div id="point-jawn" style="z-index: 2147483647;"></div></body></html>
+
