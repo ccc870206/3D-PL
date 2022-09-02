@@ -1,6 +1,6 @@
 # [ECCV2022] 3D-PL: Domain Adaptive Depth Estimation with 3D-aware Pseudo-Labeling
 ### [Paper] [[Project Page](https://ccc870206.github.io/3D-PL/)]
-<div align=center><img height="230" src="https://github.com/ccc870206/3D-PL/blob/main/figure/teaser.jpg"/></div>
+<div align=center><img src="https://github.com/ccc870206/3D-PL/blob/main/figure/teaser.jpg"/></div>
 
 ## Installation
 * This code was developed with Python 3.7.10 & Pytorch 1.8.1 & CUDA 11.3
