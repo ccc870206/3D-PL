@@ -24,6 +24,8 @@ data
 ```
 Source dataset: [vKITTI](https://europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds/) (1.3.1)
 
+## Training (will release soon)
+
 ## Testing
 Download our [pre-trained model](https://drive.google.com/drive/folders/1ZeCHo7ktv1zAu1R-bA29DLJ0SbcLbrIy?usp=sharing) and put the folder under `checkpoints/`. 
 
